@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gopal Nataraj: Research</title>
+    <link href="../bootstrap.css" rel="stylesheet"/>
+    <link href="../main.css" rel="stylesheet"/>
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="nav">
+        <div class="container">
+          <ul class="nav-tabs pull-left" id="nav-main">
+            <li role="presentation"><a href="../index.html">Home</a></li>
+            <li role="presentation" class="active"><a href="./research.html">Research</a></li>
+            <li role="presentation"><a href="./teach.html">Teaching</a></li>
+            <li role="presentation"><a href="./education.html">Education</a></li>
+					</ul>
+        
+          <ul class="nav-tabs pull-right" id="nav-supp">
+            <li role="presentation"><a href="./personal.html">Gallery</a></li>
+            <li role="presentation"><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div> <!-- class="container" -->
+      </div> <!-- class="nav" -->
+    </nav>
+    
+    <div class="research">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <h2 class="text-right"> Graduate Work </h2>
+          </div>
+			
+          <div class="col-md-10">
+            <h3> Advances in Quantitative MRI: Acquisition, Estimation, and Applications </h3>
+            
+            <div class="row">
+              <div class="col-md-8">
+                <h4> Background </h4>
+                <p class="text-justify">
+                  My thesis work is in the field of quantitative MRI (QMRI), where we seek to use MRI data to image MR <em>biomarkers</em>, or measurable tissue properties of interest.
+                  QMRI has potential to be more informative than conventional MRI.
+                  Conventional MRI is <em>qualitative</em>: it produces images comprised of voxels (i.e., 3D pixels) that are informative only relative to each other, not individually.
+                  Conventional MRI voxels are qualitative because the MR signal that they localize is a complex function of not only biomarkers but also two types of confounds: <em>nuisance markers</em> that quantify MRI system imperfections and <em>acquisition parameters</em> that characterize the MRI system's tunable "knobs".
+                  QMRI seeks to remove confound influence by directly imaging the biomarkers of interest: each QMR image voxel is a measurement of a given biomarker at a specific location.
+                  QMRI therefore provides localized biomarker measurements (e.g., myelin water content) related to a specific physiological process (e.g., demyelination) that can, through longitudinal study, be used to monitor the onset and progression of disease (e.g., multiple sclerosis).
+                </p>
+                <p class="text-justify">
+                  Despite its potential for increasing the specificity of MRI, QMRI poses several challenges beyond those of conventional MRI that currently limit its feasibility for routine clinical use.
+                  My thesis seeks to identify and address some of these challenges.
+                </p>
+                <!--
+                <p class="text-justify">
+                  Magnetic resonance imaging (MRI) is a non-invasive and flexible tool that has earned widespread clinical adoption.
+                  Because MRI is expensive relative to other medical imaging modalities, there is a need to increase the <em>value</em> of MRI examinations.
+                  Two reasonable measures of an MRI acquisition's value are its <em>sensitivity</em> to a given disorder and its <em>specificity</em> in distinguishing it from others.
+                  My thesis work is in the field of quantitative MRI (QMRI), where we seek to use MRI data to build MR <em>biomarkers</em>, or measurable tissue properties that increase the sensitivity and specificity of MRI for specific disorders of interest.
+                </p>
+                <p class="text-justify">
+                  QMRI has potential to be more informative than conventional MRI.
+                  Conventional MRI is <em>qualitative</em>: it produces images comprised of voxels (i.e., 3D pixels) that are informative only relative to each other, not individually.
+                  Conventional MRI voxels are qualitative because the MR signal that they localize is a complex function of not only biomarkers but also two types of confounds: <em>nuisance markers</em> that quantify MRI system imperfections and <em>acquisition parameters</em> that characterize the MRI system's  tunable "knobs".
+                  QMRI seeks to remove confound influence by directly imaging the biomarkers of interest: each QMR image voxel is a measurement of a given biomarker at a specific location.
+                  QMRI therefore provides localized biomarker measurements (e.g., myelin water content) related to a specific physiological process (e.g., demyelination) that can, through longitudinal study, be used to monitor the onset and progression of disease (e.g., multiple sclerosis).
+                </p>
+                <p class="text-justify">
+                  QMRI poses several challenges beyond those of conventional MRI that currently limit its feasibility for routine clinical use.
+                  My thesis seeks to identify and address some of these challenges.
+                </p>
+                -->
+                
+								<h4> Min-max precision-optimal acquisition design </h4>
+                <p class="text-justify">
+                  Accurate biomarker quantification has traditionally required multiple MR scans and thus long scan times.
+                  In general, it is not obvious how to best tune each scan's various acquisition parameters to enable reliable biomarker estimation.
+                </p>
+                <p class="text-justify">
+                  We introduced a systematic statistical method to design fast QMRI acquisitions that enable precise parameter estimation.
+                  Our method finds acquisition parameters that <em>minimize</em> the <em>maximum</em> (i.e., worst-case) imprecision subject to time and hardware constraints.
+                  As a simple example, we applied the method to design a new acquisition for estimating relaxation parameters <var>T</var><sub>1</sub> and <var>T</var><sub>2</sub> in <span class="text">white matter</span> and <span class="text">grey matter (GM)</span> regions of the human brain.
+                  <a class="btn btn-info btn-xs" href="http://ieeexplore.ieee.org/document/7582547/" target="_blank">paper</a>
+                  <a class="btn btn-info btn-xs" href="../doc/talk/opt-scan-design.pdf" target="_blank">slides</a>
+                </p>
+                
+                <h4> Machine learning-inspired scalable biomarker estimation </h4>
+                <p class="text-justify">
+                  Standard biomarker estimation methods are practical for simple problems but scale poorly with the number of (biological or nuisance) markers.
+                  For more challenging problems involving greater numbers of markers, standard methods are impractically slow.
+                 </p>
+                <p class="text-justify">
+                  We introduced a considerably more scalable algorithm that approaches biomarker estimation using modern machine learning ideas.
+                  Our method samples many combinations of biomarkers and nuisance markers and uses the known MR signal model to simulate corresponding measurements.
+                  We then take these marker-measurement pairs as <em>training points</em> and <em>learn</em> from them an estimator designed to not only fit training points but also map unseen measurements to reasonable biomarker estimates.
+                  We demonstrated that the algorithm performs comparably to a popular standard method for <var>T</var><sub>1</sub> and <var>T</var><sub>2</sub> estimation, but is at least 23x faster.
+                  <a class="btn btn-info btn-xs" href="https://arxiv.org/abs/1710.02441" target="_blank">paper</a>
+                  <a class="btn btn-info btn-xs" href="../doc/talk/perk.pdf" target="_blank">slides</a>
+                </p>
+                
+                <h4> Application: myelin water fraction imaging </h4>
+                <p class="text-justify">
+                  Myelin encases neuronal white matter (WM) axons.
+                  Myelin loss is central to the development of demyelinating disorders such as multiple sclerosis.
+                  Bulk MR signal arises from multiple water compartments with different relaxation rates, and the fastest-relaxing compartment is due to water trapped between myelin bilayers.
+                  Myelin water fraction (MWF) denotes the proportion of MR signal arising from the fast compartment relative to total signal, and is a biomarker for myelin content.
+                  MWF imaging could thus increase the specificity of MRI for demyelinating disorders.
+                </p>
+                <p class="text-justify">
+                  Even the simplest multi-compartmental MR signal models of myelin involve 6-7 biomarkers and nuisance markers per voxel, rendering fast scan design and practical biomarker estimation challenging using conventional methods.
+                  We applied the tools discussed above to both acquire MWF data and estimate MWF images substantially faster than gold-standard methods.
+                </p>
+							</div> <!-- class="col-md-8" -->
+							
+							<div class="col-md-4">
+                <img src="../fig/qmri/2016-05-31,brain,t1-ml,jet,simple.png" class="img-thumbnail" />
+                <p class="text-justify">
+                  <small>
+                    <var>T</var><sub>1</sub> estimates in milliseconds from (<em>left</em>) a slow reference acquisition and (<em>right</em>) a fast precision-optimal acquisition design.
+                    Scan design yields <var>T</var><sub>1</sub> estimates comparable those of the reference scan, but in considerably less time.
+                  </small>
+                </p>
+                <img src="../fig/qmri/toy-atan.png" class="img-thumbnail" />
+                <p class="text-justify">
+                  <small>
+                    1D illustration of machine learning-inspired scalable biomarker estimation.
+                    An unknown <span class="true">true function</span> is <span class="approx">approximated</span> by optimally weighted sums of <span class="kernel">kernel functions</span> centered at simulated training points.
+                  </small>
+                </p>
+                <img src="../fig/qmri/mwf,krr.png" class="img-thumbnail" />
+                <p class="text-justify">
+                  <small>
+                    Proof-of-concept MWF estimates from a healthy volunteer using precision-optimized MR acquisition design and scalable biomarker estimation.
+                  </small>
+                </p>
+                
+							</div> <!-- class="col-md-4" -->
+						</div> <!-- class="row" -->
+					</div> <!-- class="col-md-10" -->
+				</div> <!-- class="row" -->
+			</div> <!-- class="container" -->
+			
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2"> 
+						<h2 class="text-right"> Undergrad Work </h2>
+					</div>
+						
+					<div class="col-md-10">
+            <h3> Controlling Spontaneous Emission with Metamaterials </h3>
+						
+						<div class="row">
+							<div class="col-md-8">
+								<h4> Background: Metamaterials </h4>
+								<p class="text-justify"> <a href ="http://www.sciencemag.org/content/305/5685/788" target="_blank">Metamaterials</a> are composite materials typically comprised of a repeated array of sub-wavelength inclusions.
+								They are typically engineered to have unusual electromagnetic responses, governed not by the <em>constituent materials</em>, but rather the <em>composite structure</em>.
+                In particular, certain metamaterials exhibit a hyperbolic dispersion relation, and thereby a negative refractive index.
+								These <a href="http://www.nature.com/nphoton/journal/v7/n12/full/nphoton.2013.243.html?WT.ec_id=NPHOTON-201312" target="_blank">hyperbolic metamaterials</a> have garnered much attention for various optical applications, including <a href ="http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.85.3966" target="_blank">super-lensing</a> and <a href ="http://www.sciencemag.org/content/345/6195/427" target="_blank">reduced-visibility cloaking</a>. </p>
+                
+                <p class="text-justify"> There is especial interest directed towards the development of single-photon emitters, or "guns", for potential application in quantum cryptography.
+                For efficient single-photon emission, it is important to maintain a high spontaneous emission rate.
+                Prior work has predicted, but not empirically proven, that hyperbolic metamaterials can increase emission rates. </p>
+                
+                <h4> Contributions </h4>
+                <p class="text-justify"> Our work provides experimental evidence of a significant increase of spontaneous emission rates, in the sub-micrometer vicinity of a hyperbolic metamaterial. We observe a sixfold reduction (compared to several controls) in the emission lifetime of an 81nm dye film, in qualitative agreement with <a href="http://scitation.aip.org/content/aip/journal/apl/100/18/10.1063/1.4710548" target="_blank">theory</a>. This serves as evidence of an anomalously high density of photonic states in metamaterials, and suggests that metamaterials are useful for the development of single-photon guns. <a class="btn btn-info btn-xs" href ="https://www.osapublishing.org/ol/abstract.cfm?uri=ol-35-11-1863" target="_blank">paper</a> </p>
+							</div> <!-- class="col-md-8" -->
+              
+              <div class="col-md-4">
+                <img src="../fig/meta/img-diag,tiled.jpg" class="img-thumbnail" />
+                <img src="../fig/meta/emission-kin.jpg" class="img-thumbnail" />
+                <p class="text-justify"> <small> <em>Top:</em> Hyperbolic metamaterial sample (left) and schematic (right). <em>Bottom:</em> Emission lifetime of dye film deposited on <span class="metamat">hyperbolic metamaterial</span> is 6x faster than <span class="alumina">pure-alumina</span> and <span class="gold-glass">gold</span>/<span class="silver-glass">silver</span> film-on-glass controls. </small> </p>
+              </div> <!-- class="col-md-4" -->
+            </div> <!-- class="row" -->
+            
+						<h3> Modeling of Seismic Isolation Stacks for Active Control at LIGO </h3>
+						
+						<div class="row">
+							<div class="col-md-8">
+								<h4> Background: Sensing Gravitational Waves </h4>
+								<p class="text-justify"> Einstein's theory of general relativity postulates that gravitational waves emanating from prominent cosmic events cause minute ripples in space-time. 
+								The Laser Inferferometer Gravitational-Wave Observatory (<a href="https://ligo.caltech.edu/page/about" target="_blank">LIGO</a>) is a collection of facilities that seek to directly detect such space-time perturbations.
+								These facilities are comprised of gigantic (kilometer-scale) inteferometers designed to measure characteristic variations in the interferometer arm lengths with high accuracy, as evidence of gravitational waves. </p>
+                
+								<p class="text-justify"> The space-time perturbations that LIGO seeks are predicted to be on the miniscule order of 10<sup>-22</sup> meters, a degree of sensitivity that requires consideration of subtle interference mechanisms such as seismic motion. 
+								To compensate for such bulk effects, the optical components of LIGO were originally designed to freely swing from metal brackets bolted to seismic isolation "stacks". 
+								However, this passive isolation system was found to provide insufficient sensitivity by itself, and interest grew for installation of a more sophisticated, actively controlled isolation system. </p>
+								
+								<h4> Contributions </h4>
+								<p class="text-justify"> Our work models and characterizes the vibration mechanics of LIGO's multi-stage passive isolation stacks.
+								In particular, our model identifies parameters describing dominant modes of motion and guides efficient active control of LIGO's isolation stacks. <a class="btn btn-info btn-xs" href="../doc/paper/ligo.pdf" target="_blank">technical note</a> </p>
+								
+								<p class="text-justify"> <em>Updates</em>--Subsequent <a href="https://dcc.ligo.org/public/0093/G1200694/001/G1200694-v1.pdf" target="_blank">active isolation efforts</a> have recently shown promise in increasing sensitivity to a level where gravitational wave detection is possible. </p>
+							</div> <!-- class="col-md-9" -->
+              
+              <div class="col-md-4">
+								<img src="../fig/ligo/eig-mode2-stack4.png" class="img-thumbnail" />
+                <img src="../fig/ligo/eig-mode3-stack4.png" class="img-thumbnail" />
+                <p class="text-justify"> <small>Dominant translational (top) and rotational (bottom) eigenmodes of a typical seismic isolation stack at LIGO. The colorbar shows maximum displacements from equilibrium.</small> </p>
+              </div> <!-- class="col-md-3" -->
+						</div> <!-- class="row" -->
+					</div> <!-- class="col-md-10" -->
+				</div> <!-- class="row" -->
+			</div> <!-- class="container" -->
+    </div> <!-- class="research" -->
+    
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="container">
+        <p class="navbar-text navbar-left">
+          Copyright 2016-7, Gopal Nataraj.
+        <a href="../doc/cv/2017-10-18.pdf" class="btn btn-info btn-xs" target="_blank">CV</a>
+        </p>
+        <p class="navbar-text navbar-right">
+          Developed with <a href="http://getbootstrap.com" class="navbar-link" target="_blank">Bootstrap v3.3.6</a>
+        </p>
+      </div>
+    </nav>
+  </body>
+</html>
